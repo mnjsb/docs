@@ -1,0 +1,35 @@
+'''Para realizar a instalação do Kivy no Windows, 
+devemos primeiro realizar o upgrade dos gerenciadores pip, wheels e setuptools. 
+Para isso executamos o comando:'''
+$ python -m pip install --upgrade pip wheel setuptools
+
+#Agora podemos instalar as dependências do Kivy com os seguintes comandos:
+python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
+python -m pip install kivy.deps.gstreamer
+python -m pip install kivy.deps.angle
+
+#Com tudo instalado, podemos instalar o Kivy:
+python -m pip install kivy
+
+#Agora, com tudo instalado, podemos testar a instalação do Kivy com o seguinte código:
+import kivy
+from kivy.app import App
+from kivy.uix.label import Label
+kivy.require('1.9.1')
+class PrimeiroApp(App):
+def build(self):
+    return Label(text='Hello World, Kivy!')
+if __name__ == '__main__':
+PrimeiroApp().run()
+
+#Para isso, coloque o código acima em um script chamado main.py, por exemplo, e execute-o com kivy main.py.
+
+# Fonte: https://pythonacademy.com.br/sliders/como-instalar-o-kivy#/10
+
+# para instalar no anaconda use
+conda install kivy -c conda-forge
+
+#Supports Windows, OSX, and Ubuntu. For audio/video support also install 
+gstreamer and gst-plugins-base
+
+# Fonte: https://kivy.org/#download
